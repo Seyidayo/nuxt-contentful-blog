@@ -19,7 +19,9 @@ export default {
           content_type: 'blogPost',
         }),
       ]).then(([blogEntries]) => {
-        return [...blogEntries.items.map((entry) => entry.fields.slug)]
+        return [
+          ...blogEntries.items.map((entry) => `how-to/${entry.fields.slug}`),
+        ]
       })
     },
   },
