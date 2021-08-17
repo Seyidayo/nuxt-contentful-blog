@@ -1,4 +1,8 @@
-import contentful from 'contentful'
+/* eslint-disable nuxt/no-cjs-in-config */
+import dotenv from 'dotenv'
+dotenv.config()
+
+const contentful = require('contentful')
 const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
@@ -71,4 +75,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  env: {
+    CONTENTFUL_SPACE: process.env.CONTENTFUL_SPACE,
+    CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
+    CONTENTFUL_ENVIRONMENT: process.env.CONTENTFUL_ENVIRONMENT,
+  },
 }
