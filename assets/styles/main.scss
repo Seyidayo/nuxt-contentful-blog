@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+a {
+  text-decoration-thickness: 2px;
+  text-decoration: underline;
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.75em;
+}

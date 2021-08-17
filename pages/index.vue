@@ -1,7 +1,18 @@
 <template>
-  <Tutorial/>
+  <main class="container">
+    <Hero />
+    <b-row align-h="center" align-v="center">
+      <b-col md="9">
+        <Posts />
+      </b-col>
+    </b-row>
+  </main>
 </template>
 
 <script>
-export default {}
+import Hero from '@/components/molecules/Hero'
+import Posts from '@/components/molecules/Posts'
+export default {
+  components: { Hero, Posts },
+}
 </script>
