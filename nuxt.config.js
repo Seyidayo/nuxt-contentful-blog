@@ -9,16 +9,16 @@ export default {
   target: 'static',
 
   generate: {
-   routes() {
-     return Promise.all([
-       client.getEntries({
-         content_type: "blogPost"
-       })
-     ]).then(([blogEntries]) => {
-       return [...blogEntries.items.map(entry => entry.fields.slug)];
-     });
-   }
-  }
+    routes() {
+      return Promise.all([
+        client.getEntries({
+          content_type: 'blogPost',
+        }),
+      ]).then(([blogEntries]) => {
+        return [...blogEntries.items.map((entry) => entry.fields.slug)]
+      })
+    },
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
