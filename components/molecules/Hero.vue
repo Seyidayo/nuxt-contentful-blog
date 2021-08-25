@@ -1,6 +1,6 @@
 <template>
-  <header class="text-center">
-    <h1>Learn how to <span></span></h1>
+  <header>
+    <h1 class="h4">Learn how to <span></span></h1>
     <small>Stuffs I wish I'd learnt earlier!</small>
   </header>
 </template>
@@ -24,10 +24,14 @@ export default {
 header {
   inline-size: 100%;
   padding: 7rem 0;
+  text-align: center;
+
+  h1 {
+    margin-block-end: 0.5em;
+  }
 }
 
 span {
-  block-size: 60px;
   margin-block: 0;
 
   &::before {

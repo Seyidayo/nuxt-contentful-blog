@@ -1,25 +1,23 @@
-/* eslint-disable vue/no-v-html */
 <template>
-  <div class="container py-5 my-5">
-    <b-row align-h="center">
-      <b-col md="9">
-        <h1>{{ post.fields.title }}</h1>
-        <small class="author">By {{ post.fields.author.fields.name }}</small>
+  <section class="container post__container">
+    <header>
+      <h1 class="h3">{{ post.fields.title }}</h1>
+      <small class="author">
+        Reference: {{ post.fields.author.fields.name }}
+      </small>
+    </header>
 
-        <picture v-if="post.fields.heroImage">
-          <img
-            class="my-5"
-            :src="post.fields.heroImage.fields.file.url"
-            :alt="post.fields.title"
-            width="100%"
-            height="500px"
-          />
-        </picture>
-
-        <article v-html="$md.render(post.fields.body)"></article>
-      </b-col>
-    </b-row>
-  </div>
+    <article v-html="$md.render(post.fields.body)"></article>
+    <div class="post__video">
+      <iframe
+        :src="`https://www.youtube.com/embed/${post.fields.video}`"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -46,3 +44,33 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.post__container {
+  header {
+    padding: 5rem 0;
+    h1 {
+      margin-block-end: 0.25em;
+    }
+  }
+
+  .post__video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+iframe {
+  margin-block-start: 1rem;
+}
+</style>

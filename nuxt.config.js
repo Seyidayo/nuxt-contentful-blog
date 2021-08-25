@@ -50,7 +50,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['~/assets/styles/bootstrap.scss', '~/assets/styles/main.scss'],
+  css: ['~/assets/styles/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ['~/plugins/contentful', '~/plugins/posts'],
@@ -65,11 +65,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
-    '@nuxtjs/markdownit',
-  ],
+  modules: ['@nuxtjs/markdownit'],
 
   markdownit: {
     injected: true,
